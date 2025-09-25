@@ -5,7 +5,6 @@ LBS Eibiswald | 2aAPC
 
 Kontoverwaltung-Anwendung:<br>
 Erstellen, Löschen und Ändern von verschiedenen Kontos
-über eine grafische Oberfläche
 
 ## Installation
 
@@ -32,9 +31,6 @@ Technologien im Einsatz:
 ![Screen Shot][screenshot-1]
 ![Screen Shot][screenshot-2]
 ![Screen Shot][screenshot-3]
-![Screen Shot][screenshot-4]
-![Screen Shot][screenshot-5]
-![Screen Shot][screenshot-6]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -48,9 +44,6 @@ Technologien im Einsatz:
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [java.com]: https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white
 [java-url]: https://www.java.com/de/
-[screenshot-1]: screenshots/app_start.png
-[screenshot-2]: screenshots/add_account.png
-[screenshot-3]: screenshots/deposit_withdraw_overdraft.png
-[screenshot-4]: screenshots/multiple_accounts.png
-[screenshot-5]: screenshots/error_credit_withdrawal.png
-[screenshot-6]: screenshots/error_overdraft.png
+[screenshot-1]: screenshots/Screenshot_1.png
+[screenshot-2]: screenshots/Screenshot_2.png
+[screenshot-3]: screenshots/Screenshot_3.png

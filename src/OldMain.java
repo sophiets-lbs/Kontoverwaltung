@@ -1,7 +1,7 @@
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class OldMain {
 
     public static void main(String[] args) {
 
@@ -98,7 +98,7 @@ public class Main {
                     break;
                 case 4:
                     selectedAccount = selectAccount(accounts);
-                    if(selectedAccount != null) selectedAccount.printAccountStatement();
+                    if(selectedAccount != null) selectedAccount.getAccountStatement();
                     break;
                 case 5:
                     selectedAccount = selectAccount(accounts);
@@ -156,3 +156,4 @@ public class Main {
         return selectedAccount;
     }
 }
+*/

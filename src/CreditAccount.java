@@ -1,14 +1,21 @@
+import javax.swing.*;
+
 public class CreditAccount extends BankAccount {
 
-    public CreditAccount(String accountHolder, String bankCode, String accountNumber, double balance){
+    public CreditAccount(String accountHolder, String bankCode, String accountNumber){
         super(accountHolder, bankCode, accountNumber);
-        setBalance(balance);
         setAccountType("Credit Account");
     }
 
     @Override
-    public void withdraw(double amount){
-        System.out.println("Cannot withdraw from Credit Account.");
+    public boolean withdraw(double amount){
+        JOptionPane.showMessageDialog(
+                null,
+                "Cannot withdraw from Credit Account.",
+                "Withdrawal Error",
+                JOptionPane.ERROR_MESSAGE
+        );
+        return false;
     }
 
     @Override

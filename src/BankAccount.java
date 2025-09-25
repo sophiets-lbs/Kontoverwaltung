@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class BankAccount {
 
     private final String accountHolder;
@@ -19,15 +21,22 @@ public class BankAccount {
         balance += amount;
     }
 
-    public void withdraw(double amount){
+    public boolean withdraw(double amount){
         if((balance - amount) < overdraftLimit * -1){
-            System.out.println("Overdraft limit exceeded. Withdrawal not permitted.");
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Overdraft limit exceeded. Withdrawal not permitted.",
+                    "Withdrawal Error",
+                    JOptionPane.ERROR_MESSAGE
+            );
+            return false;
         } else {
             balance -= amount;
+            return true;
         }
     }
 
-    public void printAccountStatement(){
+    /*public void printAccountStatement(){
         if(accountType != null && !accountType.isEmpty()){
             System.out.println("Account Type: " + accountType);
         }
@@ -40,7 +49,28 @@ public class BankAccount {
                         Management Fees: %.2f
                         """,
                 accountNumber, bankCode, accountHolder, balance, overdraftLimit, managementFees);
+    }*/
+
+    public String getAccountStatement() {
+        StringBuilder sb = new StringBuilder();
+
+        if (accountType != null && !accountType.isEmpty()) {
+            sb.append("Account Type: ").append(accountType).append("\n");
+        }
+
+        sb.append(String.format("""
+            Account Number: %s
+            Bank Code: %s
+            Account Holder: %s
+            Current Balance: %.2f
+            Current Overdraft Limit: %.2f
+            Management Fees: %.2f
+            """,
+            accountNumber, bankCode, accountHolder, balance, overdraftLimit, managementFees));
+
+        return sb.toString();
     }
+
 
 
     public double getBalance() {
@@ -81,5 +111,9 @@ public class BankAccount {
 
     public double getManagementFees() {
         return managementFees;
+    }
+
+    public String toString() {
+        return accountType + " (" + accountNumber + ")";
     }
 }

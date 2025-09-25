@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class SavingsAccount extends BankAccount {
 
     public SavingsAccount(String accountHolder, String bankCode, String accountNumber){
@@ -6,12 +8,19 @@ public class SavingsAccount extends BankAccount {
     }
 
     @Override
-    public void withdraw(double amount){
+    public boolean withdraw(double amount){
         double newBalance = getBalance() - amount;
         if(newBalance < 0){
-            System.out.println("Withdrawal not permitted. Balance exceeded.");
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Withdrawal from savings account not permitted.",
+                    "Withdrawal Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return false; // indicate failure
         } else {
             setBalance(newBalance);
+            return true; // indicate success
         }
     }
+
 }
